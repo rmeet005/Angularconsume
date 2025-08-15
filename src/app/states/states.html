@@ -1,0 +1,36 @@
+<p>states works!</p>
+<h3>Add State</h3>
+<form (ngSubmit)="addState()" #userForm="ngForm">
+
+    <label>StateName</label>
+    <input type="text" name="roleName" [(ngModel)]="newState.stateName" required>
+    <br><br>
+
+    <label>countryId</label>
+    <input type="text" name="description" [(ngModel)]="newState.countryId" required>
+    <br><br>
+    <button type="submit">Add State</button>
+
+</form>
+
+<h3>User List</h3>
+<table border="1" cellpadding="5">
+    <thead>
+    
+        <tr>
+            <th>stateId</th>
+            <th>stateName</th>
+            <th>countryId</th>
+            <th>countryName</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userdata">
+            <td>{{ user.stateId}}</td>
+            <td>{{ user.stateName}}</td>
+            <td>{{ user.countryId}}</td>
+            <td>{{ user.countryName}}</td>
+        </tr>
+    </tbody>
+</table>
+

@@ -1,0 +1,48 @@
+<p>employment-type works!</p>
+
+<h3>Add EmploymentType</h3>
+<form (ngSubmit)="addoccupationType()" #userForm="ngForm">
+
+    <label>typeCode</label>
+    <input type="text" name="typeCode" [(ngModel)]="newEmploymentType.typeCode" required>
+    <br><br>
+
+    <label>typeName</label>
+    <input type="text" name="typeName" [(ngModel)]="newEmploymentType.typeName" required>
+    <br><br>
+    <label>description</label>
+    <input type="text" name="description" [(ngModel)]="newEmploymentType.description" required>
+    <br><br>
+
+    <button type="submit">Add OccupationType</button>
+
+</form>
+
+<h3>Pincode List</h3>
+<table border="1" cellpadding="5">
+    <thead>
+        
+        <tr>
+            <th>employmentTypeId</th>
+            <th>typeCode</th>
+            <th>typeName</th>
+            <th>description</th>
+            <th>isActive</th>
+            <th>createdAt</th>
+            <th>updatedAt</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let user of userdata">
+            <td>{{ user.employmentTypeId}}</td>
+            <td>{{ user.typeCode}}</td>
+            <td>{{ user.typeName}}</td>
+            <td>{{ user.description}}</td>
+            <td>{{ user.isActive}}</td>
+            <td>{{ user.createdAt}}</td>
+            <td>{{ user.updatedAt}}</td>
+        </tr>
+    </tbody>
+</table>

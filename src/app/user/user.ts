@@ -19,7 +19,7 @@ export class User implements OnInit {
     userName: '',
     email: '',
     passwordHash: '',
-    isActive: false,
+    isActive: true,
     isDeleted: false,
     userroles: null
   };
@@ -30,7 +30,7 @@ export class User implements OnInit {
 
   getusers(){
     this.http.get("http://localhost:5054/api/User/FetchAllUsers").subscribe((result:any)=>{
-      console.log(result);
+      // console.log(result);
       this.userdata=result;
     })
 
@@ -42,13 +42,13 @@ export class User implements OnInit {
     this.http.post("http://localhost:5054/api/User/AddUser", this.newUser)
       .subscribe((result: any) => {
         console.log("User added:", result);
-        debugger;
         this.getusers();
+
         this.newUser = {
           userName: '',
           email: '',
           passwordHash: '',
-          isActive: false,
+          isActive: true,
           isDeleted: false,
           userroles: null
         };

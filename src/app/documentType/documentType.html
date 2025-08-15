@@ -1,0 +1,47 @@
+<p>document-type works!</p>
+<h3>Add DocumentType</h3>
+<form (ngSubmit)="addDocumentType()" #userForm="ngForm">
+
+    <label>documentCode</label>
+    <input type="text" name="documentCode" [(ngModel)]="newDocumentType.documentCode" required>
+    <br><br>
+
+    <label>documentName</label>
+    <input type="text" name="documentName" [(ngModel)]="newDocumentType.documentName" required>
+    <br><br>
+    <label>description</label>
+    <input type="text" name="description" [(ngModel)]="newDocumentType.description" required>
+    <br><br>
+
+    <button type="submit">Add OccupationType</button>
+
+</form>
+
+<h3>Pincode List</h3>
+<table border="1" cellpadding="5">
+    <thead>
+
+        <tr>
+            <th>documentTypeId</th>
+            <th>documentCode</th>
+            <th>documentName</th>
+            <th>description</th>
+            <th>isActive</th>
+            <th>createdAt</th>
+            <th>updatedAt</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let user of userdata">
+            <td>{{ user.documentTypeId}}</td>
+            <td>{{ user.documentCode}}</td>
+            <td>{{ user.documentName}}</td>
+            <td>{{ user.description}}</td>
+            <td>{{ user.isActive}}</td>
+            <td>{{ user.createdAt}}</td>
+            <td>{{ user.updatedAt}}</td>
+        </tr>
+    </tbody>
+</table>

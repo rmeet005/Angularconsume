@@ -1,0 +1,37 @@
+<p>roles works!</p>
+
+
+<h3>Add Role</h3>
+<form (ngSubmit)="addRole()" #userForm="ngForm">
+   
+    <label>roleName</label>
+    <input type="text" name="roleName" [(ngModel)]="newRole.roleName" required>
+    <br><br>
+
+    <label>description</label>
+    <input type="text" name="description" [(ngModel)]="newRole.description" required>
+    <br><br>
+    <button type="submit">Add Role</button>
+
+</form>
+
+<h3>User List</h3>
+<table border="1" cellpadding="5">
+    <thead>
+        <tr>
+            <th>RoleId</th>
+            <th>roleName</th>
+            <th>description</th>
+            <th>isActive</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userdata">
+            <td>{{ user.roleId}}</td>
+            <td>{{ user.roleName}}</td>
+            <td>{{ user.description }}</td>
+            <td>{{ user.isActive | date:'short' }}</td>
+        </tr>
+    </tbody>
+</table>
+

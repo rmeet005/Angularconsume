@@ -1,0 +1,62 @@
+<p>pincodes works!</p><br>
+<h3>Add Pincode</h3>
+<form (ngSubmit)="addRejectionReason()" #userForm="ngForm">
+
+    <label>pincode</label>
+    <input type="text" name="pincode" [(ngModel)]="newpincodes.pincode" required>
+    <br><br>
+
+    <label>area</label>
+    <input type="text" name="area" [(ngModel)]="newpincodes.area" required>
+    <br><br>
+    <label>cityId</label>
+    <input type="text" name="cityId" [(ngModel)]="newpincodes.cityId" required>
+    <br><br>
+    <label>stateId</label>
+    <input type="text" name="stateId" [(ngModel)]="newpincodes.stateId" required>
+    <br><br>
+    <label>countryId</label>
+    <input type="text" name="countryId" [(ngModel)]="newpincodes.countryId" required>
+    <br><br>
+    <button type="submit">Add Pincode</button>
+
+</form>
+
+<h3>Pincode List</h3>
+<table border="1" cellpadding="5">
+    <thead>
+
+        <tr>
+            <th>pincodeId</th>
+            <th>pincode</th>
+            <th>area</th>
+            <th>cityId</th>
+            <th>cityName</th>
+            <th>stateId</th>
+            <th>stateName</th>
+            <th>countryId</th>
+            <th>countryName</th>
+            <th>isActive</th>
+            <th>createdAt</th>
+            <th>updatedAt</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userdata">
+            <td>{{ user.pincodeId}}</td>
+            <td>{{ user.pincode}}</td>
+            <td>{{ user.area}}</td>
+            <td>{{ user.cityId}}</td>
+            <td>{{ user.cityName}}</td>
+            <td>{{ user.stateId}}</td>
+            <td>{{ user.stateName}}</td>
+            <td>{{ user.countryId}}</td>
+            <td>{{ user.countryName}}</td>
+            <td>{{ user.isActive}}</td>
+            <td>{{ user.createdAt}}</td>
+            <td>{{ user.updatedAt}}</td>
+
+        </tr>
+    </tbody>
+</table>

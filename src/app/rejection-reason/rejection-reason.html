@@ -1,0 +1,45 @@
+<p>rejection-reason works!</p>
+
+<h3>Add RejectionReason</h3>
+<form (ngSubmit)="addRejectionReason()" #userForm="ngForm">
+
+    <label>reasonCode</label>
+    <input type="text" name="reasonCode" [(ngModel)]="newRejectionReason.reasonCode" required>
+    <br><br>
+
+    <label>reasonText</label>
+    <input type="text" name="reasonText" [(ngModel)]="newRejectionReason.reasonText" required>
+    <br><br>
+    <label>category</label>
+    <input type="text" name="category" [(ngModel)]="newRejectionReason.category" required>
+    <br><br>
+    <button type="submit">Add RejectionReason</button>
+
+</form>
+
+<h3>RejectionReason List</h3>
+<table border="1" cellpadding="5">
+    <thead>
+   
+        <tr>
+            <th>reasonId</th>
+            <th>reasonCode</th>
+            <th>reasonText</th>
+            <th>category</th>
+            <th>isActive</th>
+            <th>createdAt</th>
+            <th>updatedAt</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userdata">
+            <td>{{ user.reasonId}}</td>
+            <td>{{ user.reasonCode}}</td>
+            <td>{{ user.reasonText}}</td>
+            <td>{{ user.category}}</td>
+            <td>{{ user.isActive}}</td>
+            <td>{{ user.createdAt}}</td>
+            <td>{{ user.updatedAt}}</td>
+        </tr>
+    </tbody>
+</table>

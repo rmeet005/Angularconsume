@@ -1,0 +1,47 @@
+<p>department works!</p>
+<h3>Add Department</h3>
+<form (ngSubmit)="addDepartment()" #userForm="ngForm">
+
+    <label>departmentCode</label>
+    <input type="text" name="departmentCode" [(ngModel)]="newDepartment.departmentCode" required>
+    <br><br>
+
+    <label>departmentName</label>
+    <input type="text" name="departmentName" [(ngModel)]="newDepartment.departmentName" required>
+    <br><br>
+    <label>description</label>
+    <input type="text" name="description" [(ngModel)]="newDepartment.description" required>
+    <br><br>
+
+    <button type="submit">Add OccupationType</button>
+
+</form>
+
+<h3>Pincode List</h3>
+<table border="1" cellpadding="5">
+    <thead>
+
+        <tr>
+            <th>departmentId</th>
+            <th>departmentCode</th>
+            <th>departmentName</th>
+            <th>description</th>
+            <th>isActive</th>
+            <th>createdAt</th>
+            <th>updatedAt</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let user of userdata">
+            <td>{{ user.departmentId}}</td>
+            <td>{{ user.departmentCode}}</td>
+            <td>{{ user.departmentName}}</td>
+            <td>{{ user.description}}</td>
+            <td>{{ user.isActive}}</td>
+            <td>{{ user.createdAt}}</td>
+            <td>{{ user.updatedAt}}</td>
+        </tr>
+    </tbody>
+</table>
