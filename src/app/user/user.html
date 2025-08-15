@@ -1,0 +1,49 @@
+<p>user works!</p>
+
+<h3>Add User</h3>
+<form (ngSubmit)="addUser()" #userForm="ngForm">
+
+    <label>User Name:</label>
+    <input type="text" name="userName" [(ngModel)]="newUser.userName" required>
+    <br><br>
+
+    <label>Email:</label>
+    <input type="email" name="email" [(ngModel)]="newUser.email" required>
+    <br><br>
+
+    <label>Password:</label>
+    <input type="password" name="passwordHash" [(ngModel)]="newUser.passwordHash" required>
+    <br><br>
+
+    <label>Is Active:</label>
+    <input type="checkbox" name="isActive" [(ngModel)]="newUser.isActive">
+    <br><br>
+
+    <button type="submit">Add User</button>
+
+</form>
+
+<h3>User List</h3>
+<table border="1" cellpadding="5">
+    <thead>
+        <tr>
+            <th>UID</th>
+            <th>User Name</th>
+            <th>Email</th>
+            <th>Is Active</th>
+            <th>Created At</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userdata">
+            <td>{{ user.uid }}</td>
+            <td>{{ user.userName }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.isActive ? 'Yes' : 'No' }}</td>
+            <td>{{ user.createdAt | date:'short' }}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
